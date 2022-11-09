@@ -5,17 +5,20 @@ function gotMessage(message, sender, sendResponse) {
 }
 
 function sketch(value) {
-  let p5Canvas;
+  let p5c = (value) => new p5(value);
+
   var sketch = function (p) {
     p.setup = function () {
-      let canvas = p.createCanvas(400, 400);
-      canvas.background(0);
+      if (value === "frec-edit") {
+        let canvas = p.createCanvas(400, 400);
+        canvas.background(0);
+        canvas.position(0, 0);
+      }
+      if (value === "frec-remove") {
+        $("canvas").remove();
+      }
     };
   };
-  if (value === "frec-pencil") {
-    p5Canvas = new p5(sketch);
-  }
-  if (value === "frec-remove") {
-    p5Canvas = new p5(sketch);
-  }
+
+  p5c(sketch);
 }
