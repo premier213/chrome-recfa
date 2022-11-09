@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "funny-rec",
+  "description": "record video from web",
+  "version": "1.0",
+  "icons": {
+    "128": "./src/images/rec-128.png",
+    "48": "./src/images/rec-48.png",
+    "16": "./src/images/rec-16.png"
+  },
+  "action": {
+    "default_icon": "./src/images/rec-16.png",
+    "default_popup": "./src/index.html"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./src/scripts/content.js",
+        "./src/scripts/p5.js",
+        "./src/scripts/jquery-3.6.1.min.js"
+      ]
+    }
+  ]
+}

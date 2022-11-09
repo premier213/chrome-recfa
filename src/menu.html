@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/p5.js"></script>
+    <script src="./scripts/jquery-3.6.1.min.js"></script>
+    <script>
+      function setup() {
+        var url = new Promise((res) => {
+          res(chrome.runtime.getURL("./src"));
+        });
+        console.log("🚀 ~ file: menu.html ~ line 13 ~ url ~ url", url);
+        $("#rectangle").attr("src", `${url}/images/rectangle.svg`);
+      }
+    </script>
+  </head>
+  <body class="frec-bg-gray-100" dir="ltr">
+    <div
+      class="frec-bg-gray-200 frec-rounded-lg frec-border-white frec-border frec-shadow-lg frec-flex frec-gap-4 frec-justify-between"
+    >
+      <button class="frec-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-rectangle"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="1"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+        </svg>
+      </button>
+      <button class="frec-btn">
+        <img id="rectangle" src="./images/circle.svg" alt="دایره" />
+      </button>
+      <button class="frec-btn">
+        <img id="rectangle" src="./images/arrow.svg" alt="فلش" />
+      </button>
+      <button class="frec-btn">
+        <img id="rectangle" src="./images/pencil.svg" alt="خط" />
+      </button>
+    </div>
+  </body>
+</html>

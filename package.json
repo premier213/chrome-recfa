@@ -1,0 +1,18 @@
+{
+  "name": "record-fa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "npx tailwindcss -i ./src/style/style.css -o ./src/style/main.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "jsdom": "^20.0.2"
+  }
+}

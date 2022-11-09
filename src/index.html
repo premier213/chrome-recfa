@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style/main.css" rel="stylesheet" />
+    <script src="./scripts/p5.js"></script>
+    <script src="./scripts/jquery-3.6.1.min.js"></script>
+    <script src="./scripts/main.js"></script>
+  </head>
+  <body class="bg-gray-50 h-64">
+    <div class="py-4 px-8">
+      <!-- sketch -->
+      <div class="inline-flex rounded-md shadow-sm" role="group">
+        <!-- pencil -->
+        <button
+          id="frec-pencil"
+          type="button"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-pencil"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"
+            ></path>
+            <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
+          </svg>
+          <span class="font-lg font-bold">خط</span>
+        </button>
+        <!-- arrow -->
+        <button
+          id="frec-arrow"
+          type="button"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-r border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-arrow-left-circle"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M17 12h-14"></path>
+            <path d="M6 9l-3 3l3 3"></path>
+            <circle cx="19" cy="12" r="2"></circle>
+          </svg>
+          <span class="font-lg font-bold">فلش</span>
+        </button>
+        <!-- circle -->
+        <button
+          id="frec-circle"
+          type="button"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-circle-dashed"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95"></path>
+            <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44"></path>
+            <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92"></path>
+            <path d="M8.56 20.31a9 9 0 0 0 3.44 .69"></path>
+            <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95"></path>
+            <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44"></path>
+            <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92"></path>
+            <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69"></path>
+          </svg>
+          <span class="font-lg font-bold">دایره</span>
+        </button>
+        <!-- rectangle -->
+        <button
+          id="frec-rectangle"
+          type="button"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-rectangle"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          </svg>
+          <span class="font-lg font-bold">مستطیل</span>
+        </button>
+      </div>
+      <!-- btn -->
+      <div class="my-4 flex justify-center">
+        <!-- start -->
+        <button
+          id="frec-start"
+          class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+        >
+          <span
+            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+          >
+            <div class="flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-video"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                stroke-width="1"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z"
+                ></path>
+                <rect x="3" y="6" width="12" height="12" rx="2"></rect>
+              </svg>
+            </div>
+            شروع
+          </span>
+        </button>
+        <!-- end -->
+        <button
+          id="frec-stop"
+          class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
+        >
+          <span
+            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+          >
+            <div class="flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-player-stop"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                stroke-width="1"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <rect x="5" y="5" width="14" height="14" rx="2"></rect>
+              </svg>
+            </div>
+            پایان
+          </span>
+        </button>
+      </div>
+      <!-- manage canvas -->
+      <div class="mt-4 flex justify-center">
+        <!-- edit -->
+        <button
+          id="frec-edit"
+          type="button"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-edit"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
+            ></path>
+            <path
+              d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+            ></path>
+            <path d="M16 5l3 3"></path>
+          </svg>
+          ویرایش
+        </button>
+        <!-- clear -->
+        <button
+          id="frec-remove"
+          type="button"
+          class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 flex"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-paint-off"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M7 3h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4m-4 0h-2a2 2 0 0 1 -2 -2v-2"
+            ></path>
+            <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5m-4 0h-1v2"></path>
+            <rect x="10" y="15" width="4" height="6" rx="1"></rect>
+            <path d="M3 3l18 18"></path>
+          </svg>
+          خذف
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
