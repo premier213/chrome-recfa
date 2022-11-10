@@ -21,9 +21,9 @@
         "<all_urls>"
       ],
       "js": [
-        "./src/scripts/content.js",
         "./src/scripts/p5.js",
-        "./src/scripts/jquery-3.6.1.min.js"
+        "./src/scripts/jquery-3.6.1.min.js",
+        "./src/scripts/content.js"
       ]
     }
   ]

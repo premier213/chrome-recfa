@@ -1,9 +1,11 @@
 function setup() {
   noCanvas();
-  let fLine = select("#frec-edit");
-  fLine.mousePressed(() => msg("frec-edit"));
+  let fEdit = select("#frec-edit");
+  fEdit.mousePressed(() => msg("frec-edit"));
   let fClear = select("#frec-remove");
   fClear.mousePressed(() => msg("frec-remove"));
+  let fLine = select("#frec-line");
+  fLine.mousePressed(() => msg("frec-line"));
 }
 
 function msg(args) {
