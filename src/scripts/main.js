@@ -1,9 +1,18 @@
+function capturing() {
+  const time = Date.now();
+  chrome.tabs.captureVisibleTab((data) => dl(data));
+  let dl = (url) => chrome.downloads.download({ filename: `${time}.png`, url });
+}
+
 function setup() {
   noCanvas();
   $("#frec-remove").click(() => msg("frec-remove"));
   $("#frec-circle").click(() => msg("frec-circle"));
   $("#frec-rect").click(() => msg("frec-rect"));
   $("#frec-line").click(() => msg("frec-line"));
+  // $("#frec-start").click(() => record("frec-start"));
+  // $("#frec-stop").click(() => record("frec-stop"));
+  $("#frec-screenshot").click(() => capturing());
 }
 
 function msg(args) {

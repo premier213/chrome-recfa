@@ -2,8 +2,9 @@
 chrome.runtime.onMessage.addListener(gotMessage);
 
 /**p5.js class variable */
-let p5c;
+let P5C;
 let STAGE_VALUE;
+let CAPTURE = new CCapture({ format: "png" });
 
 /**receive message */
 function gotMessage(message, sender, sendResponse) {
@@ -16,7 +17,11 @@ function runCanvas(value) {
     createCanvas(p, value.val);
   };
 
-  p5c = new p5(stage);
+  capture = new CCapture({
+    format: "png",
+  });
+
+  P5C = new p5(stage);
 }
 
 /** stage started */
@@ -34,6 +39,11 @@ const createCanvas = (p, value) => {
   p.draw = () => {
     if (STAGE_VALUE === "frec-remove") {
       p.remove();
+    }
+    if (value.val === "frec-stop") {
+      console.log("stop");
+
+      capturer.save();
     }
   };
   p.mouseClicked = () => {

@@ -13,7 +13,13 @@
     "default_popup": "./src/index.html"
   },
   "permissions": [
-    "tabs"
+    "activeTab",
+    "tabs",
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*/*"
   ],
   "content_scripts": [
     {
@@ -22,6 +28,7 @@
       ],
       "js": [
         "./src/scripts/p5.js",
+        "./src/scripts/CCapture.all.min.js",
         "./src/scripts/jquery-3.6.1.min.js",
         "./src/scripts/content.js"
       ]
