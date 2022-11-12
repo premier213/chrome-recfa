@@ -1,17 +1,9 @@
 function setup() {
   noCanvas();
-  let fEdit = select("#frec-edit");
-  fEdit.mousePressed(() => msg("frec-edit"));
-  let fClear = select("#frec-remove");
-  fClear.mousePressed(() => msg("frec-remove"));
-  let fLine = select("#frec-line");
-  fLine.mousePressed(() => msg("frec-line"));
-  let fCircle = select("#frec-circle");
-  fCircle.mousePressed(() => msg("frec-circle"));
-  let fRect = select("#frec-rect");
-  fRect.mousePressed(() => msg("frec-rect"));
-  let fArrow = select("#frec-arrow");
-  fArrow.mousePressed(() => msg("frec-arrow"));
+  $("#frec-remove").click(() => msg("frec-remove"));
+  $("#frec-circle").click(() => msg("frec-circle"));
+  $("#frec-rect").click(() => msg("frec-rect"));
+  $("#frec-line").click(() => msg("frec-line"));
 }
 
 function msg(args) {
