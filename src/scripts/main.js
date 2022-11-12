@@ -25,6 +25,7 @@ function msg(args) {
     let msg = {
       val: args,
     };
+
     chrome.tabs.sendMessage(tab[0].id, msg);
   }
 }
